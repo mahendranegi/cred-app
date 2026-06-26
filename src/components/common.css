@@ -1,0 +1,72 @@
+body{
+    color: #212121;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.mainContainer table{
+    width: 100%;
+    border-collapse: collapse;
+    & button{
+        background: #000;
+        color: #fff;
+        font-weight: bold;
+        text-transform: capitalize;
+        border: 1px solid #000;
+        cursor: pointer;
+        padding: 6px 4px;
+        border-radius: 4px;
+        min-width: 80px;
+    }
+    & button:last-child{
+        margin: 0 0 0 12px;
+    }
+}
+.mainContainer th,td{
+    border: 1px solid #ccc;
+    padding: 6px;
+}
+
+.formData{
+    max-width: 600px;
+    border: 1px solid #000;
+    margin: 44px auto 0;
+    padding: 32px;
+    & div{
+        padding: 0 0 24px;
+    }
+    & input{
+        height: 40px;
+        width: 100%;
+        padding: 0 8px;
+        box-sizing: border-box;
+    }
+    & label{
+        display: block;
+        padding: 0 0 4px;
+        text-align: left;
+    }
+    & button{
+        background: greenyellow;
+        border: 1px solid greenyellow;
+        color: #000;
+        font-weight: 700;
+        font-size: 20px;
+        text-transform: uppercase;
+        padding: 12px;
+        border-radius: 12px;
+        cursor: pointer;
+    }
+}
+.deleteMsg{
+    position: absolute;
+    top: 0;
+    background: red;
+    padding: 8px 12px;
+    color: #fff;
+    right: 16px;
+}
+.nodata{
+    padding: 40px;
+    margin: 0 auto;
+    text-align: center;
+}
