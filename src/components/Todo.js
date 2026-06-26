@@ -6,7 +6,7 @@ function Todo() {
     const[val,setVal] = useState(tableData);
     const [showForm, setShowForm] = useState(false);
     const [editData, setEditData] = useState(null);
-    const [nodata, setNodata] = useState('No data');
+    const [nodata, setNodata] = useState();
     const [success, setSuccess] = useState("");
     const [showtodo, setShowtodo] = useState(true);
     const handleClick = (elem) =>{
