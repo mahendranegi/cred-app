@@ -1,12 +1,20 @@
 import React, { useState } from 'react'
 import '../components/common.css';
-function Form({editData }) {
+function Form({editData,handleUpdate }) {
+    console.log(handleUpdate,editData,'handleUpdate')
      const [name, setName] = useState(editData?.name || '');
      const [age, setAge] = useState(editData?.age || '');
      const [remark, setRemark] = useState(editData?.remark || '');
-     const handleUpdate = () =>{
-        console.log(name,age)
-     }
+   const submitData = () => {
+    const updatedData = {
+      ...editData,
+      name,
+      age,
+      remark
+    };
+
+    handleUpdate(updatedData);
+  };
   return (
     <section className='formData'>
         <h3>Student Form</h3>
@@ -24,7 +32,7 @@ function Form({editData }) {
         <input placeholder='Enter Name' value={remark} onChange={(e)=>{setRemark(e.target.value)}}/>
         </div>
 
-        <button onClick={handleUpdate}>Submit</button>
+        <button onClick={submitData}>Submit</button>
     </section>
   )
 }

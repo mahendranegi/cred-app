@@ -27,6 +27,21 @@ const handleDelete = (index) =>{
     setSuccess('')
    }, 2000);
 }
+//For update value
+
+const handleUpdate = (updatedData) => {
+
+  const newData = val.map((item) => {
+    if (item.id === updatedData.id) {
+      return updatedData;
+    }
+    return item;
+  });
+
+  setVal(newData);
+  setShowForm(false);
+  setShowtodo(true);
+};
   return (
     <>
     {showtodo && <section className='mainContainer'>       
@@ -77,7 +92,7 @@ const handleDelete = (index) =>{
         </table>
          {val.length ===0 ? <p className='nodata'>No - data</p> : null}
     </section>}
-    {showForm && <Form editData={editData} />}
+    {showForm && <Form editData={editData} handleUpdate={handleUpdate}/>}
     {success && <p className='deleteMsg'>{success}</p>}
     </>
   )
