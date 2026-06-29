@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import '../components/common.css';
 import { tableData } from './Data';
 import Form from './Form';
+import DataContext, { UserContext } from '../context/DataContext';
 function Todo() {
+    const {user,handleBgm} = useContext(UserContext)
     const[val,setVal] = useState(tableData);
     const [showForm, setShowForm] = useState(false);
     const [editData, setEditData] = useState(null);
@@ -44,10 +46,12 @@ const handleUpdate = (updatedData) => {
 };
   return (
     <>
-    {showtodo && <section className='mainContainer'>       
-        <h1>CRED REACT APP</h1>
-        
-        <table cellPadding='0' cellPadding='0'>
+    {showtodo && <section className='mainContainer'>   
+        <button className='switchBtn' onClick={handleBgm}>click me</button>    
+        <h1>CRUD REACT APP</h1>
+        {user}
+        <aside>
+        <table cellPadding='0' cellPadding='0' align='center'>
             <tr>
                 <th>
                     Sr.N
@@ -90,6 +94,7 @@ const handleUpdate = (updatedData) => {
             })}
            
         </table>
+        </aside>
          {val.length ===0 ? <p className='nodata'>No - data</p> : null}
     </section>}
     {showForm && <Form editData={editData} handleUpdate={handleUpdate}/>}

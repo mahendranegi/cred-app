@@ -5,6 +5,8 @@ function Form({editData,handleUpdate }) {
      const [name, setName] = useState(editData?.name || '');
      const [age, setAge] = useState(editData?.age || '');
      const [remark, setRemark] = useState(editData?.remark || '');
+         const [update, setUpdate] = useState("");
+     
    const submitData = () => {
     const updatedData = {
       ...editData,
@@ -12,8 +14,9 @@ function Form({editData,handleUpdate }) {
       age,
       remark
     };
-
+ setUpdate("Successfully Deleted")
     handleUpdate(updatedData);
+   
   };
   return (
     <section className='formData'>
@@ -33,6 +36,7 @@ function Form({editData,handleUpdate }) {
         </div>
 
         <button onClick={submitData}>Submit</button>
+        {update && <p>{update}</p>}
     </section>
   )
 }

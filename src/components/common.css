@@ -1,7 +1,23 @@
 body{
     color: #212121;
     font-size: 16px;
+    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+}
+.mainContainer h1{
+    padding: 48px 0 24px;
+}
+.switchBtn{
+    background: #000;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 12px;
+    border: 1px solid #000;
+    cursor: pointer;
 }
 .mainContainer table{
     width: 100%;
@@ -21,9 +37,17 @@ body{
         margin: 0 0 0 12px;
     }
 }
+.mainContainer{
+    padding: 0 40px;
+}
+.mainContainer aside{
+    padding: 24px;
+    box-shadow: 0 2px 13px 0 rgba(0, 0, 0, 0.13);
+    border-radius: 12px;
+}
 .mainContainer th,td{
     border: 1px solid #ccc;
-    padding: 6px;
+    padding: 12px;
 }
 
 .formData{
